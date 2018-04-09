@@ -1,2 +1,2 @@
-# hoc
-higher order component - samples
+# HOC
+higher order component pattern - samples
