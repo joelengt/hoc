@@ -1,4 +1,10 @@
-// example 1 
+function getHOC(MyPrettyComponent) {
+	return function GetHOC(props) {
+		return <MyPrettyComponent getViewport={getViewport} {...props} />;
+	};
+}
+
+// example 1
 function setIntervalHOC(WrappedComponent) {
 	return class WithSetInterval extends Component {
 		componentWillMount() {
@@ -18,16 +24,16 @@ function setIntervalHOC(WrappedComponent) {
 		render() {
 			return (
 				<WrappedComponent
-					setInterval={ this.setInterval.bind(this) }
+					setInterval={this.setInterval.bind(this)}
 					{...this.props}
 				/>
-			)
+			);
 		}
-	}
+	};
 }
 
 // example 2
-const hightOrderComponent = (WrappedComponent) => {
+const hightOrderComponent = WrappedComponent => {
 	class HOC extends React.Component {
 		componentWillMount() {
 			this.intervals = [];
@@ -46,10 +52,10 @@ const hightOrderComponent = (WrappedComponent) => {
 		render() {
 			return (
 				<WrappedComponent
-					setInterval={ this.setInterval.bind(this) }
+					setInterval={this.setInterval.bind(this)}
 					{...this.props}
 				/>
-			)
+			);
 		}
 	}
-}
+};
