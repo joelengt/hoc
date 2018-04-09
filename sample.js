@@ -58,4 +58,6 @@ const hightOrderComponent = WrappedComponent => {
 			);
 		}
 	}
+	
+	return HOC
 };
